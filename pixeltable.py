@@ -12,8 +12,6 @@ width, height = i.size
 def triplet(rgb):
   return format((rgb[0]<<16)|(rgb[1]<<8)|rgb[2], '06x')
 
-print triplet((170, 187, 204))
-
 colors = [[triplet(pixels[x,y]) for y in range(height)] for x in range(width)]
 
 outfile = open(f + ".html", 'w')
