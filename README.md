@@ -8,7 +8,7 @@ pixeltable
 **python pixeltable.py [path]/[name].jpg** will create **[path]/[name].html**; a properly formatted HTML file that replicates the image with CSS and an HTML table.  This should only be used for small images (100x100 at the biggest).
 
 #### File size results from initial tests ####
-<table style="border: solid 1px;">
+<table>
   <tr>
     <td><strong>image width</strong></td>
     <td><strong>image height</strong></td>
@@ -19,19 +19,19 @@ pixeltable
     <td>50 pixels</td>
     <td>20 pixels</td>
     <td>4.9 kB</td>
-    <td>52.9 kB</td>
+    <td>46.9 kB</td>
   </tr>
   <tr>
     <td>100 pixels</td>
     <td>40 pixels</td>
     <td>6.8 kB</td>
-    <td>209.3 kB</td>
+    <td>185.3 kB</td>
   </tr>
   <tr>
     <td>400 pixels</td>
     <td>245 pixels</td>
     <td>52.7 kB</td>
-    <td>5.1 MB</td>
+    <td>4.5 MB</td>
   </tr>
 </table>
 
