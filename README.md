@@ -5,10 +5,36 @@ pixeltable
 
 ### Usage ###
 
-**python pixeltable.py [name].jpg** will create **[name].html**; a properly formatted HTML file with inline CSS and a table that replicates the image.
+**python pixeltable.py [path]/[name].jpg** will create **[path]/[name].html**; a properly formatted HTML file that replicates the image with CSS and an HTML table.  This should only be used for small images (100x100 at the biggest).
 
-Made by John Atkinson
- 
-[http://discountgeni.us](http://discountgeni.us)
+#### File size results from initial tests ####
+<table style="border: solid 1px;">
+  <tr>
+    <td><strong>image width</strong></td>
+    <td><strong>image height</strong></td>
+    <td><strong>.JPG file size</strong></td>
+    <td><strong>.HTML file size</strong></td>
+  </tr>
+  <tr>
+    <td>50 pixels</td>
+    <td>20 pixels</td>
+    <td>4.9 kB</td>
+    <td>52.9 kB</td>
+  </tr>
+  <tr>
+    <td>100 pixels</td>
+    <td>40 pixels</td>
+    <td>6.8 kB</td>
+    <td>209.3 kB</td>
+  </tr>
+  <tr>
+    <td>400 pixels</td>
+    <td>245 pixels</td>
+    <td>52.7 kB</td>
+    <td>5.1 MB</td>
+  </tr>
+</table>
 
+Made by John Atkinson   
+[http://discountgeni.us](http://discountgeni.us)  
 [@discountgenius](http://twitter.com/discountgenius)  
