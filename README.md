@@ -14,24 +14,28 @@ pixeltable
     <td><strong>image height</strong></td>
     <td><strong>.JPG file size</strong></td>
     <td><strong>.HTML file size</strong></td>
+	<td><strong>minified .HTML file size</strong></td>
   </tr>
   <tr>
     <td>50 pixels</td>
     <td>20 pixels</td>
-    <td>4.9 kB</td>
-    <td>46.9 kB</td>
+    <td>1.39 KB</td>
+    <td>34 KB</td>
+	<td>26.8 KB</td>
   </tr>
   <tr>
     <td>100 pixels</td>
     <td>40 pixels</td>
-    <td>6.8 kB</td>
-    <td>185.3 kB</td>
+    <td>3.1 KB</td>
+    <td>134 KB</td>
+	<td>106 KB</td>
   </tr>
   <tr>
     <td>400 pixels</td>
     <td>245 pixels</td>
-    <td>52.7 kB</td>
-    <td>4.5 MB</td>
+    <td>59 KB</td>
+    <td>3.18 MB</td>
+	<td>2.52 MB</td>
   </tr>
 </table>
 

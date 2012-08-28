@@ -1,7 +1,20 @@
 import os, sys
 import Image
+import argparse
 
-imagefile = sys.argv[1]
+parser = argparse.ArgumentParser(description='Convert an image to a HTML table')
+parser.add_argument("-m", "--min", help="create minified HTML code", action="store_false")
+parser.add_argument("file", help="filename of the image to convert")
+args = parser.parse_args()
+
+if (args.min):
+  newline = "\n"
+  tab = "  "
+else:
+  newline = ""
+  tab = ""
+
+imagefile = args.file
 f, e = os.path.splitext(imagefile)
 outfile = open(f + ".html", 'w')
 i = Image.open(imagefile)
@@ -15,40 +28,26 @@ def triplet(rgb):
 colors = [[triplet(pixels[x,y]) for y in range(height)] for x in range(width)]
 
 outfile = open(f + ".html", 'w')
-outfile.write("<html>\n")
-outfile.write("  <head>\n")
-outfile.write("    <style type=\"text/css\">\n")
-outfile.write("      table.pixeltable\n")
-outfile.write("      {\n")
-outfile.write("        border-spacing: 0;\n")
-outfile.write("        border-collapse: collapse;\n")
-outfile.write("        width: ")
+outfile.write("<html>")
+outfile.write(tab + "<head>" + newline)
+outfile.write(tab * 2 + "<style type=\"text/css\">" + newline)
+outfile.write(tab * 3 + "table.pixeltable" + newline)
+outfile.write(tab * 3 + "{" + newline)
+outfile.write(tab * 3 + "border-spacing: 0;" + newline)
+outfile.write(tab * 3 + "border-collapse: collapse;" + newline)
+outfile.write(tab * 3 + "width: ")
 outfile.write(str(width))
-outfile.write("px;\n")
-outfile.write("        height: ")
+outfile.write("px;" + newline)
+outfile.write(tab * 3 + "height: ")
 outfile.write(str(height))
-outfile.write("px;\n")
-outfile.write("      }\n")
-outfile.write("      td.p\n")
-outfile.write("      {\n")
-outfile.write("        width: 1px;\n")
-outfile.write("        height: 1px;\n")
-outfile.write("        border: 0;\n")
-outfile.write("        padding: 0;\n")
-outfile.write("      }\n")
-outfile.write("    </style>\n")
-outfile.write("  </head>\n")
-outfile.write("  <body bgcolor=\"#ffffff\">\n")
-outfile.write("    <table class=\"pixeltable\">\n")
-for y in range(height):
-  outfile.write("      <tr>\n")
-  for x in range(width):
-    outfile.write("        <td class=\"p\" bgcolor=\"#")
-    outfile.write(colors[x][y])
-    outfile.write("\"></td>\n")
-  outfile.write("      </tr>\n")
-outfile.write("    </table>\n")
-outfile.write("  </body>\n")
-outfile.write("</html>\n")
-outfile.close()
-
+outfile.write("px;" + newline)
+outfile.write(tab * 2 + "}" + newline)
+outfile.write(tab * 2 + ".pixeltable td" + newline)
+outfile.write(tab * 2 + "{" + newline)
+outfile.write(tab * 3 + "width: 1px;" + newline)
+outfile.write(tab * 3 + "height: 1px;" + newline)
+outfile.write(tab * 3 + "border: 0;" + newline)
+outfile.write(tab * 3 + "padding: 0;" + newline)
+outfile.write(tab * 2 + "}" + newline)
+outfile.write(tab * 2 + "</style>" + newline)
+outfile.write(tab + "</head>" + newline)
